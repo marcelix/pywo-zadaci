@@ -1,4 +1,3 @@
-
 from math import sqrt
 
 class Tocka:
@@ -16,3 +15,22 @@ class Tocka:
     
     def __repr__(self):
         return "Tocka({0}, {1})".format(self.x, self.y)
+    
+
+class Vektor(Tocka):
+    
+    def __add__(self,b):
+        # self je vektor, b je vektor
+        x = self.x + b.x
+        y = self.y + b.y
+        return Vektor(x, y)
+    
+    def __sub__(self, b):
+        x = self.x - b.x
+        y = self.y - b.y
+        return Vektor(x, y)
+    
+    def __rmul__(self, smth):
+        x = self.x * smth
+        y = self.y * smth
+        return Vektor(x, y)
