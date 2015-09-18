@@ -1,5 +1,4 @@
 
-
 from math import sqrt
 
 class Tocka:
@@ -12,7 +11,6 @@ class Tocka:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-    
     
     def norm(self):
         return sqrt( self.x**2 + self.y**2  )
@@ -41,16 +39,22 @@ class Vektor(Tocka):
     def __mul__(self, b):
         """ self je vektor, b je vektor
         """
-        x = self.x * b
-        y = self.y * b
-        return Vektor(x, y)
-
+        if (type(b)==int):
+            x = self.x * b
+            y = self.y * b
+            return Vektor(x, y)
+        else:
+            return sum(p*q for p,q in zip([self.x,self.y], [b.x,b.y]))
+        
     def __rmul__(self, b):
         """ self je vektor, b je vektor
         """
-        x = b * self.x
-        y = b * self.y
-        return Vektor(x, y)
+        if (type(b)==int):
+            x = b * self.x
+            y = b * self.y
+            return Vektor(x, y)
+        else:
+            return sum(p*q for p,q in zip([self.x,self.y], [b.x,b.y]))
     
     def __repr__(self):
         return "Vektor({0}, {1})".format(self.x,self.y)
