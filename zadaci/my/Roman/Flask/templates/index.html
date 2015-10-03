@@ -1,0 +1,52 @@
+
+
+{% extends "base.html" %}
+{% block title %} Index {% endblock %}
+
+<h1>Index</h1>
+        
+    
+{% block menu %}  {{ super() }}  {% endblock %}
+
+{% block content %}  
+
+    <!--
+    <div style="float: left; width: 10%;">  
+    
+        {{ "1337 hax0r aplikacija" }} 
+        <h4>Stvari koje volim</h4>
+        <ul>
+            <li>Filozofija</li>
+            <li>Knjige</li>
+            <li>Računalne igre</li>
+        </ul>
+    
+    </div> 
+    
+    <div style="float: right; width: 90%; border-left: 1px solid #000; height:100px">  
+        
+        {{ "stupac broj dva" }}     
+        <h4>Stvari koje ne volim</h4>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    
+    </div> 
+    -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 border-right: 1px solid black; width: 90%;">
+                <p>some text here </p>
+            </div>
+            <div class="col-md-6 width: 10%;">
+                <p>some more text here</p>
+            </div>
+        </div>
+    </div>
+    
+    {% endblock %}
+
+{% block footer %}  {{ super() }}  {% endblock %}

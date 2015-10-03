@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title> {% block title %} TITLE {% endblock %} </title>
+        
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            
+        </title>
+    </head>
+    
+    <body>
+    
+        <div>
+        {% block menu %}
+            
+            <a href={{ url_for("about") }}>About</a>
+            &nbsp
+            <a href={{ url_for("hello") }}>Hello</a>
+
+        {% endblock %}
+        </div>
+        
+        <hr>
+        
+        <div id="content">
+        {% block content %}
+
+            CONTENT BLOCK
+
+        {% endblock %}
+        </div>
+
+        <div id="footer" style = "position: absolute; bottom: 5px;" >
+        {% block footer %}
+        
+            Kupi mi PyWo
+
+        {% endblock %}
+        </div>
+        
+    </body>
+</html>
