@@ -1,0 +1,17 @@
+
+
+{% extends "base.html" %}
+{% block title %} About page {% endblock %}
+        
+    
+{% block menu %}   
+
+    <a href={{ url_for("index") }}>Index</a>
+    &nbsp
+    <a href={{ url_for("hello") }}>Hello</a>  
+
+{% endblock %}
+
+{% block content %} {{ "About page"|e }}   {% endblock %}
+
+{% block footer %} {{ super() }}  {% endblock %}
